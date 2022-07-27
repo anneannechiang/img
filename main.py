@@ -6,6 +6,6 @@ import os
 
 for file in os.listdir('original'):
     if file.endswith('.png'):
-        image_file = Image.open('original/' + file)
+        image_file = Image.open(os.path.join('original',file))
         image_file = image_file.convert('L') 
-        image_file.save('result/' + file[:-4] + '_grey.png')
+        image_file.save(os.path.join('result', file[:-4] + '_grey.png'))
